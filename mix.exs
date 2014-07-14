@@ -12,7 +12,7 @@ defmodule Zencoder.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:httpoison],
+    [applications: [:httpotion],
      mod: {Zencoder, []}]
   end
 
@@ -27,9 +27,9 @@ defmodule Zencoder.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:httpoison, "~> 0.3.0"},
-      {:jazz, "~> 0.1.2"},
-      {:hackney, github: "benoitc/hackney", ref: "cf90543f9cc21ffea34d71035521b0102b8555cf"}
+      {:httpotion, "~> 0.2.4"},
+      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
+      {:jazz, "~> 0.1.2"}
     ]
   end
 end

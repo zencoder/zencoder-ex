@@ -33,8 +33,3 @@ defmodule Zencoder.Job do
   end
 
 end
-
-
-
-# Zencoder.Job.create(%{test: true, input: "http://s3.amazonaws.com/zencodertesting/test.mov"})
-

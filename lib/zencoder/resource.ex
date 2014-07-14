@@ -2,15 +2,15 @@ defmodule Zencoder.Resource do
   use Jazz
 
   def get(url, options) do
-    HTTPoison.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
+    HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
   end
 
   def post(url, options) do
-    HTTPoison.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
   end
 
   def put(url, options) do
-    HTTPoison.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
   end
 
   def headers(options) do
