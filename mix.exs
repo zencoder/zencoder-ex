@@ -27,7 +27,8 @@ defmodule Zencoder.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:httpoison,    "~> 0.3.0"},
+      {:httpoison, "~> 0.3.0"},
+      {:jazz, "~> 0.1.2"},
       {:hackney, github: "benoitc/hackney", ref: "cf90543f9cc21ffea34d71035521b0102b8555cf"}
     ]
   end
