@@ -7,8 +7,9 @@ defmodule Zencoder.Job do
 
   def list(options \\ %{}) do
     options = options
-             |> update_in([:page],     &(&1 || 1))
-             |> update_in([:per_page], &(&1 || 50))
+              |> update_in([:page],     &(&1 || 1))
+              |> update_in([:per_page], &(&1 || 50))
+
     get("/jobs", options)
   end
 
