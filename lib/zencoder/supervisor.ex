@@ -6,7 +6,9 @@ defmodule Zencoder.Supervisor do
   end
 
   def init(:ok) do
-    children = []
+    children = [
+      worker(Zencoder.Config, [])
+    ]
 
     supervise(children, strategy: :one_for_one)
   end
