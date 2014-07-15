@@ -28,7 +28,7 @@ Install the [Hex.pm](http://hex.pm) package
 
 #### API Key
 
-To communicate with the Zencoder API you need to provide your API key, you can find your API key by logging into your Zencoder account and visiting https://app.zencoder.com/api
+To communicate with the Zencoder API you'll need to provide your API key, you can find your API key by logging into your Zencoder account and visiting https://app.zencoder.com/api
 
 There are three ways to provide your API key to the Elixir library.
 
@@ -49,7 +49,7 @@ There are three ways to provide your API key to the Elixir library.
 
 #### Base URL
 
-By default the integration library will send all requests to version 2 of our API. "https://app.zencoder.com/api/v2". If, for whatever reason, you want to send requests to a different url you may configure your base URL in two ways.
+By default the integration library will send all requests to version 2 of our API: "https://app.zencoder.com/api/v2". If, for whatever reason, you want to send requests to a different url you may configure your base URL in two ways.
 
 1. Set it from within your application
     ```elixir
