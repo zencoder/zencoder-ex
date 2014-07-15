@@ -39,7 +39,7 @@ There are three ways to provide your API key to the Elixir library.
 
 2. Set it as the environment variable `ZENCODER_API_KEY`
     ```
-    ZENCODER\_API\_KEY=your-api-key iex -S mix
+    ZENCODER_API_KEY=your-api-key iex -S mix
     ```
 
 3. Every request takes a map as its final argument, you may provide your API key there
