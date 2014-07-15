@@ -3,15 +3,21 @@ defmodule Zencoder.Resource do
   use Jazz
 
   def get(url, options) do
-    Response.process HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
+    Response.process fn ->
+      HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
+    end
   end
 
   def post(url, options) do
-    Response.process HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    Response.process fn ->
+      HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    end
   end
 
   def put(url, options) do
-    Response.process HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    Response.process fn ->
+      HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    end
   end
 
   def headers(options) do
@@ -31,10 +37,10 @@ defmodule Zencoder.Resource do
   def body(options), do: JSON.encode!(options)
 
   def params(%{} = options) do
-    params = options
-             |> Map.delete(:api_key)
-             |> URI.encode_query
-             |> params
+    options
+    |> Map.delete(:api_key)
+    |> URI.encode_query
+    |> params
   end
   def params(""),     do: ""
   def params(params), do: "?#{params}"

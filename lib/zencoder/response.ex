@@ -3,7 +3,16 @@ defmodule Zencoder.Response do
 
   use Jazz
 
-  def process(response) do
+  def process(request) do
+    try do
+      process_response request.()
+    catch
+      kind, error ->
+        Zencoder.Error.process(kind, error)
+    end
+  end
+
+  def process_response(response) do
     body = response.body
            |> String.strip
            |> process_body
