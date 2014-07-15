@@ -91,83 +91,83 @@ The message and stacktrace fields are the result of calling Exception.message(er
 
 You can pattern match to determine how to handle the response:
 
-    ```elixir
-    case Zencoder.Job.create %{test: true, input: "http://s3.amazonaws.com/zencodertesting/test.mov"} do
-      %Zencoder.Response{success?: true} = response ->
-        # some happy path stuff here
-      %Zencoder.Response{success?: false} = response ->
-        # uh oh, maybe something is wrong with your request? better check the [docs](https://app.zencoder.com/docs)
-      %Zencoder.Error{} = response ->
-        # timed out, Zencoder down?! Perhaps some nice retry logic, check our [integration reliability guide](https://app.zencoder.com/docs/guides/advanced-integration/stable-integration)
-    end
-    ```
+  ```elixir
+  case Zencoder.Job.create %{test: true, input: "http://s3.amazonaws.com/zencodertesting/test.mov"} do
+    %Zencoder.Response{success?: true} = response ->
+      # some happy path stuff here
+    %Zencoder.Response{success?: false} = response ->
+      # uh oh, maybe something is wrong with your request? better check the [docs](https://app.zencoder.com/docs)
+    %Zencoder.Error{} = response ->
+      # timed out, Zencoder down?! Perhaps some nice retry logic, check our [integration reliability guide](https://app.zencoder.com/docs/guides/advanced-integration/stable-integration)
+  end
+  ```
 
 ## [Jobs](https://app.zencoder.com/docs/api/jobs)
 
 Create a [new job](https://app.zencoder.com/docs/api/jobs/create).
 
-    ````elixir
-    Zencoder.Job.create(%{input: "http://s3.amazonaws.com/zencodertesting/test.mov"})
-    ````
+  ````elixir
+  Zencoder.Job.create(%{input: "http://s3.amazonaws.com/zencodertesting/test.mov"})
+  ````
 
 Get [details](https://app.zencoder.com/docs/api/jobs/show) about a job.
 
-    ````elixir
-    Zencoder.Job.details(12345)
-    ````
+  ````elixir
+  Zencoder.Job.details(12345)
+  ````
 
 Get [progress](https://app.zencoder.com/docs/api/jobs/progress) on a job.
 
-    ````elixir
-    Zencoder.Job.progress(12345)
-    ````
+  ````elixir
+  Zencoder.Job.progress(12345)
+  ````
 
 [List jobs](https://app.zencoder.com/docs/api/jobs/list). By default this returns the last 50 jobs, but this can be altered in an optional Map.
 
-    ````elixir
-    Zencoder.Job.list(%{page: 1, per_page: 5, state: "finished"})
-    ````
+  ````elixir
+  Zencoder.Job.list(%{page: 1, per_page: 5, state: "finished"})
+  ````
 
 
 [Cancel](https://app.zencoder.com/docs/api/jobs/cancel) a job
 
-    ````elixir
-    Zencoder.Job.cancel(12345)
-    ````
+  ````elixir
+  Zencoder.Job.cancel(12345)
+  ````
 
 [Resubmit](https://app.zencoder.com/docs/api/jobs/resubmit) a job
 
-    ````elixir
-    Zencoder.Job.resubmit(12345)
-    ````
+  ````elixir
+  Zencoder.Job.resubmit(12345)
+  ````
 
 ## [Inputs](https://app.zencoder.com/docs/api/inputs)
 
 Get [details](https://app.zencoder.com/docs/api/inputs/show) about an input.
 
-    ````elixir
-    Zencoder.Input.details(12345)
-    ````
+  ````elixir
+  Zencoder.Input.details(12345)
+  ````
 
 Get [progress](https://app.zencoder.com/docs/api/inputs/progress) for an input.
 
-    ````elixir
-    Zencoder.Input.progress(12345)
-    ````
+  ````elixir
+  Zencoder.Input.progress(12345)
+  ````
 
 ## [Outputs](https://app.zencoder.com/docs/api/outputs)
 
 Get [details](https://app.zencoder.com/docs/api/outputs/show) about an output.
 
-    ````elixir
-    Zencoder.Output.details(12345)
-    ````
+  ````elixir
+  Zencoder.Output.details(12345)
+  ````
 
 Get [progress](https://app.zencoder.com/docs/api/outputs/progress) for an output.
 
-    ````elixir
-    Zencoder.Output.progress(12345)
-    ````
+  ````elixir
+  Zencoder.Output.progress(12345)
+  ````
 
 ## [Reports](https://app.zencoder.com/docs/api/reports)
 
@@ -175,51 +175,51 @@ Reports are great for getting usage data for your account. All default to 30 day
 
 Get [all usage](https://app.zencoder.com/docs/api/reports/all) (Live + VOD).
 
-    ````elixir
-    Zencoder.Report.all
-    ````
+  ````elixir
+  Zencoder.Report.all
+  ````
 
-    // For a specific date range
-    ````elixir
-    Zencoder.Report.all %{from: "2013-05-01", to: "2013-06-01"}
-    ````
+  // For a specific date range
+  ````elixir
+  Zencoder.Report.all %{from: "2013-05-01", to: "2013-06-01"}
+  ````
 
-    // For a specific grouping
-    ````elixir
-    Zencoder.Report.all %{grouping: "aperture-testing"}
-    ````
+  // For a specific grouping
+  ````elixir
+  Zencoder.Report.all %{grouping: "aperture-testing"}
+  ````
 
 Get [VOD usage](https://app.zencoder.com/docs/api/reports/vod).
 
-    ````elixir
-    Zencoder.Report.vod
-    ````
+  ````elixir
+  Zencoder.Report.vod
+  ````
 
-    // For a specific date range
-    ````elixir
-    Zencoder.Report.vod %{from: "2013-05-01", to: "2013-06-01"}
-    ````
+  // For a specific date range
+  ````elixir
+  Zencoder.Report.vod %{from: "2013-05-01", to: "2013-06-01"}
+  ````
 
-    // For a specific grouping
-    ````elixir
-    Zencoder.Report.vod %{grouping: "aperture-testing"}
-    ````
+  // For a specific grouping
+  ````elixir
+  Zencoder.Report.vod %{grouping: "aperture-testing"}
+  ````
 
 Get [Live usage](https://app.zencoder.com/docs/api/reports/live).
 
-    ````elixir
-    Zencoder.Report.live
-    ````
+  ````elixir
+  Zencoder.Report.live
+  ````
 
-    // For a specific date range
-    ````elixir
-    Zencoder.Report.live %{from: "2013-05-01", to: "2013-06-01"}
-    ````
+  // For a specific date range
+  ````elixir
+  Zencoder.Report.live %{from: "2013-05-01", to: "2013-06-01"}
+  ````
 
-    // For a specific grouping
-    ````elixir
-    Zencoder.Report.live %{grouping: "aperture-testing"}
-    ````
+  // For a specific grouping
+  ````elixir
+  Zencoder.Report.live %{grouping: "aperture-testing"}
+  ````
 
 ## [Accounts](https://app.zencoder.com/docs/api/accounts)
 
@@ -247,9 +247,9 @@ Get [details](https://app.zencoder.com/docs/api/accounts/show) about the current
 
 Turn [integration mode](https://app.zencoder.com/docs/api/accounts/integration) on (all jobs are test jobs).
 
-    ````elixir
-    Zencoder.Account.integration
-    ````
+  ````elixir
+  Zencoder.Account.integration
+  ````
 
 Turn off integration mode, which means your account is live (and you'll be billed for jobs).
 
