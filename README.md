@@ -180,15 +180,11 @@ Get [all usage](https://app.zencoder.com/docs/api/reports/all) (Live + VOD).
 
   ````elixir
   Zencoder.Report.all
-  ````
 
-  // For a specific date range
-  ````elixir
+  # For a specific date range
   Zencoder.Report.all %{from: "2013-05-01", to: "2013-06-01"}
-  ````
 
-  // For a specific grouping
-  ````elixir
+  # For a specific grouping
   Zencoder.Report.all %{grouping: "aperture-testing"}
   ````
 
@@ -196,15 +192,11 @@ Get [VOD usage](https://app.zencoder.com/docs/api/reports/vod).
 
   ````elixir
   Zencoder.Report.vod
-  ````
 
-  // For a specific date range
-  ````elixir
+  # For a specific date range
   Zencoder.Report.vod %{from: "2013-05-01", to: "2013-06-01"}
-  ````
 
-  // For a specific grouping
-  ````elixir
+  # For a specific grouping
   Zencoder.Report.vod %{grouping: "aperture-testing"}
   ````
 
@@ -212,15 +204,11 @@ Get [Live usage](https://app.zencoder.com/docs/api/reports/live).
 
   ````elixir
   Zencoder.Report.live
-  ````
 
-  // For a specific date range
-  ````elixir
+  # For a specific date range
   Zencoder.Report.live %{from: "2013-05-01", to: "2013-06-01"}
-  ````
 
-  // For a specific grouping
-  ````elixir
+  # For a specific grouping
   Zencoder.Report.live %{grouping: "aperture-testing"}
   ````
 
@@ -230,9 +218,8 @@ Create a [new account](https://app.zencoder.com/docs/api/accounts/create). A uni
 
   ````elixir
   Zencoder.Account.create %{email: "tedjones@example.com", terms_of_service: 1}
-  ````
 
-  ````elixir
+  # Create an account with all possible options
   Zencoder.Account.create %{
     email: "tedjones2@example.com",
     terms_of_service: 1,
