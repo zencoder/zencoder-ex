@@ -96,9 +96,12 @@ You can pattern match to determine how to handle the response:
     %Zencoder.Response{success?: true} = response ->
       # some happy path stuff here
     %Zencoder.Response{success?: false} = response ->
-      # uh oh, maybe something is wrong with your request? better check the [docs](https://app.zencoder.com/docs)
+      # uh oh, maybe something is wrong with your request?
+      # better check the docs at https://app.zencoder.com/docs
     %Zencoder.Error{} = response ->
-      # timed out, Zencoder down?! Perhaps some nice retry logic, check our [integration reliability guide](https://app.zencoder.com/docs/guides/advanced-integration/stable-integration)
+      # timed out? Zencoder broken? Computers are hard! Perhaps some nice retry logic.
+      # Check out our integration reliability guide:
+      # https://app.zencoder.com/docs/guides/advanced-integration/stable-integration
   end
   ```
 
