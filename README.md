@@ -34,7 +34,7 @@ There are three ways to provide your API key to the Elixir library.
 
 1. Set it from within your application
     ```elixir
-    Zencoder.api\_key "your-api-key"
+    Zencoder.api_key "your-api-key"
     ```
 
 2. Set it as the environment variable `ZENCODER_API_KEY`
@@ -44,7 +44,7 @@ There are three ways to provide your API key to the Elixir library.
 
 3. Every request takes a map as its final argument, you may provide your API key there
     ```elixir
-    Zencoder.Job.progress(12345, %{api\_key: "your-api-key"})
+    Zencoder.Job.progress(12345, %{api_key: "your-api-key"})
     ```
 
 ### Base URL
