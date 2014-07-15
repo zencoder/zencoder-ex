@@ -8,7 +8,7 @@ Requires Elixir ~> 0.14.3
 
 ### Installation
 
-Install the NPM package
+Install the [Hex.pm](http://hex.pm) package
 
 1. Add zencoder `mix.exs` dependencies:
 
