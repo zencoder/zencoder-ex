@@ -61,7 +61,7 @@ By default the integration library will send all requests to version 2 of our AP
     ZENCODER\_BASE\_URL=https://app.zencoder.com/api/v1 iex -S mix
     ```
 
-### Responses
+## Responses
 
 All API request functions will return either a `%Zencoder.Response{}` struct (which may or may not be successful) or a `%Zencoder.Error{}` struct if an exception occurred.
 
