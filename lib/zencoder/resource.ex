@@ -1,16 +1,17 @@
 defmodule Zencoder.Resource do
+  alias Zencoder.Response
   use Jazz
 
   def get(url, options) do
-    HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
+    Response.process HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
   end
 
   def post(url, options) do
-    HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    Response.process HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
   end
 
   def put(url, options) do
-    HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
+    Response.process HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
   end
 
   def headers(options) do
