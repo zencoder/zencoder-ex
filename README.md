@@ -53,12 +53,12 @@ By default the integration library will send all requests to version 2 of our AP
 
 1. Set it from within your application
     ```elixir
-    Zencoder.base\_url "https://app.zencoder.com/api/v1"
+    Zencoder.base_url "https://app.zencoder.com/api/v1"
     ```
 
 2. Set it as the environment variable `ZENCODER_BASE_URL`
     ```
-    ZENCODER\_BASE\_URL=https://app.zencoder.com/api/v1 iex -S mix
+    ZENCODER_BASE_URL=https://app.zencoder.com/api/v1 iex -S mix
     ```
 
 ## Responses
@@ -92,14 +92,14 @@ The message and stacktrace fields are the result of calling Exception.message(er
 You can pattern match to determine how to handle the response:
 
     ```elixir
-      case Zencoder.Job.create %{test: true, input: "http://s3.amazonaws.com/zencodertesting/test.mov"} do
-        %Zencoder.Response{success?: true} = response ->
-          # some happy path stuff here
-        %Zencoder.Response{success?: false} = response ->
-          # uh oh, maybe something is wrong with your request? better check the [docs](https://app.zencoder.com/docs)
-        %Zencoder.Error{} = response ->
-          # timed out, Zencoder down?! Perhaps some nice retry logic, check our [integration reliability guide](https://app.zencoder.com/docs/guides/advanced-integration/stable-integration)
-      end
+    case Zencoder.Job.create %{test: true, input: "http://s3.amazonaws.com/zencodertesting/test.mov"} do
+      %Zencoder.Response{success?: true} = response ->
+        # some happy path stuff here
+      %Zencoder.Response{success?: false} = response ->
+        # uh oh, maybe something is wrong with your request? better check the [docs](https://app.zencoder.com/docs)
+      %Zencoder.Error{} = response ->
+        # timed out, Zencoder down?! Perhaps some nice retry logic, check our [integration reliability guide](https://app.zencoder.com/docs/guides/advanced-integration/stable-integration)
+    end
     ```
 
 ## [Jobs](https://app.zencoder.com/docs/api/jobs)
