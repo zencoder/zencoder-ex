@@ -13,5 +13,6 @@ before_script:
   - MIX_ENV=test mix do deps.get, compile
 script:
   - mix test
+  - mix coveralls.travis
 env:
   - MIX_ENV=test
