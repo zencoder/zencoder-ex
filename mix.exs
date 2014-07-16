@@ -29,7 +29,8 @@ defmodule Zencoder.Mixfile do
     [
       {:httpotion, "~> 0.2.4"},
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:jazz, "~> 0.1.2"}
+      {:jazz, "~> 0.1.2"},
+      {:exvcr, "~> 0.1.7"}
     ]
   end
 end

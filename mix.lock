@@ -1,7 +1,13 @@
-%{"hackney": {:git, "git://github.com/benoitc/hackney.git", "cf90543f9cc21ffea34d71035521b0102b8555cf", [ref: "cf90543f9cc21ffea34d71035521b0102b8555cf"]},
+%{"exactor": {:package, "0.5.0"},
+  "excoveralls": {:package, "0.2.4"},
+  "exprintf": {:package, "0.1.3"},
+  "exvcr": {:package, "0.1.7"},
+  "hackney": {:git, "git://github.com/benoitc/hackney.git", "cf90543f9cc21ffea34d71035521b0102b8555cf", [ref: "cf90543f9cc21ffea34d71035521b0102b8555cf"]},
   "hackney_lib": {:git, "https://github.com/benoitc/hackney_lib.git", "48a5a3fc64892c95e4e3efdd464f26ca5683d2f9", [tag: "0.3.0"]},
   "httpoison": {:package, "0.3.0"},
   "httpotion": {:package, "0.2.4"},
   "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "7871e2ebe8811efb64e1917e2de455fa87e8dfe3", [tag: "v4.1.0"]},
   "idna": {:git, "git://github.com/benoitc/erlang-idna.git", "21aa158b7f36bf2a000f12fe40d7f21eece9cf65", [tag: "hackney-0.11.2"]},
-  "jazz": {:package, "0.1.2"}}
+  "jazz": {:package, "0.1.2"},
+  "jsex": {:package, "2.0.0"},
+  "jsx": {:package, "2.0.4"}}
