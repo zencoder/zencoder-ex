@@ -27,7 +27,6 @@ defmodule Zencoder.Response do
     }
   end
 
-  def process_body(nil), do: %{}
   def process_body(raw_body) when byte_size(raw_body) == 0, do: %{}
   def process_body(raw_body), do: JSON.decode!(raw_body, keys: :atoms)
 
