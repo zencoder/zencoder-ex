@@ -9,7 +9,7 @@
       },
       "method": "put",
       "options": [],
-      "url": "https://qa.zencoder.com/api/v2/account/live"
+      "url": "https://app.zencoder.com/api/v2/account/live"
     },
     "response": {
       "body": " ",
