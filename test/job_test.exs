@@ -18,6 +18,12 @@ defmodule JobTest do
 
   test "job listing" do
     use_cassette "job_list" do
+      assert 50 == Zencoder.Job.list.body |> length
+    end
+  end
+
+  test "job listing with options" do
+    use_cassette "job_list_with_options" do
       assert 10 == Zencoder.Job.list(%{page: 1, per_page: 10}).body |> length
     end
   end
