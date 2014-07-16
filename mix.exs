@@ -5,6 +5,7 @@ defmodule Zencoder.Mixfile do
     [app: :zencoder,
      version: "0.0.1",
      elixir: "~> 0.14.3",
+     test_coverage: [tool: ExCoveralls],
      deps: deps]
   end
 
@@ -30,7 +31,8 @@ defmodule Zencoder.Mixfile do
       {:httpotion, "~> 0.2.4"},
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
       {:jazz, "~> 0.1.2"},
-      {:exvcr, "~> 0.1.7"}
+      {:exvcr, "~> 0.1.7"},
+      {:excoveralls, "~> 0.2.4"}
     ]
   end
 end
