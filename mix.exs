@@ -2,17 +2,19 @@ defmodule Zencoder.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :zencoder,
-     version: "0.1.0",
-     elixir: "~> 0.14.3",
-     test_coverage: [tool: ExCoveralls],
-     deps: deps(Mix.env)],
-     package: [
-       contributors: ["Adam Kittelson"],
-       licenses: ["MIT"],
-       links: [github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com"]
-     ],
-     description: "Elixir API wrapper for the Zencoder video transcoding API."
+    [
+      app: :zencoder,
+      version: "0.1.1",
+      elixir: "~> 0.14.3",
+      test_coverage: [tool: ExCoveralls],
+      deps: deps(Mix.env),
+      package: [
+        contributors: ["Adam Kittelson"],
+        licenses: ["MIT"],
+        links: [github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com"]
+      ],
+      description: "Elixir API wrapper for the Zencoder video transcoding API."
+    ]
   end
 
   # Configuration for the OTP application
