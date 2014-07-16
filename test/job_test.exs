@@ -22,6 +22,12 @@ defmodule JobTest do
     end
   end
 
+  test "job details" do
+    use_cassette "job_details" do
+      assert "2014-07-16T03:31:41Z" == Zencoder.Job.details(1234).body[:job][:created_at]
+    end
+  end
+
   test "job progress" do
     use_cassette "job_progress" do
       assert "finished" == Zencoder.Job.progress(1234).body[:state]
