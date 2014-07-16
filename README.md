@@ -1,6 +1,7 @@
 # Zencoder
 
 [![Build Status](https://travis-ci.org/zencoder/zencoder-ex.svg?branch=master)](https://travis-ci.org/zencoder/zencoder-ex)
+[![Coverage Status](https://coveralls.io/repos/zencoder/zencoder-ex/badge.png?branch=master)](https://coveralls.io/r/zencoder/zencoder-ex?branch=master)
 
 An Elixir library for interacting with the [Zencoder](http://zencoder.com) API.
 
