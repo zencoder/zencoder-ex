@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Zencoder-Api-Key": "api-key"
+      },
+      "method": "get",
+      "options": [],
+      "url": "https://app.zencoder.com/api/v2/outputs/1234"
+    },
+    "response": {
+      "body": "{\"id\":282895013,\"url\":\"https://example.com/output.mp4\",\"label\":null,\"state\":\"finished\",\"format\":\"mpeg4\",\"frame_rate\":30.0,\"duration_in_ms\":5000,\"audio_sample_rate\":44100,\"audio_bitrate_in_kbps\":90,\"audio_codec\":\"aac\",\"height\":720,\"width\":1280,\"file_size_in_bytes\":972994,\"video_codec\":\"h264\",\"total_bitrate_in_kbps\":1531,\"channels\":\"2\",\"video_bitrate_in_kbps\":1441,\"md5_checksum\":null}",
+      "headers": {
+        "Server": "ZenServer 0.1.9",
+        "Date": "Wed, 16 Jul 2014 16:54:20 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "590",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Zencoder-Rate-Remaining": "60",
+        "ETag": "\"3e8d1ed260e9630015b4211e1763addf\"",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Headers": "Zencoder-Api-Key",
+        "Access-Control-Max-Age": "300",
+        "Cache-Control": "private, max-age=0, must-revalidate"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
