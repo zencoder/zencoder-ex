@@ -6,4 +6,5 @@
   "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "7871e2ebe8811efb64e1917e2de455fa87e8dfe3", [tag: "v4.1.0"]},
   "jazz": {:package, "0.1.2"},
   "jsex": {:package, "2.0.0"},
-  "jsx": {:package, "2.0.4"}}
+  "jsx": {:package, "2.0.4"},
+  "meck": {:git, "git://github.com/eproxus/meck.git", "3fa3e9bbebc3e65f6ceffe4800d56335e9e3ebac", []}}

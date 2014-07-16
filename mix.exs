@@ -32,7 +32,8 @@ defmodule Zencoder.Mixfile do
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
       {:jazz, "~> 0.1.2"},
       {:exvcr, "~> 0.1.7"},
-      {:excoveralls, "~> 0.2.4"}
+      {:excoveralls, "~> 0.2.4"},
+      {:meck, "0.8.2", github: "eproxus/meck"}
     ]
   end
 end

@@ -81,12 +81,11 @@ A Zencoder response has the following fields:
 
 A Zencoder error has the following fields:
 
-1. message:    The message from the exception
-2. stacktrace: The formatted exception
-3. kind:       The type of error
-4. error:      The exception
+1. stacktrace: The formatted exception
+2. kind:       The type of error
+3. error:      The exception
 
-The message and stacktrace fields are the result of calling Exception.message(error) and Exception.format(kind, error) respectively. The kind and error are provided if you wish to do your own formatting.
+Stacktrace is the formatted exception (via Exception.format/2). The kind and error are provided if you wish to do your own formatting.
 
 #### Pattern Matching
 
