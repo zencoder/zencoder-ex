@@ -1,7 +1,7 @@
 defmodule Zencoder.Account do
   import Zencoder.Resource
 
-  def create(options \\ %{}) do
+  def create(options) do
     post("/account", options)
   end
 
