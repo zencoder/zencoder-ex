@@ -6,7 +6,7 @@ defmodule Zencoder.Mixfile do
      version: "0.0.1",
      elixir: "~> 0.14.3",
      test_coverage: [tool: ExCoveralls],
-     deps: deps]
+     deps: deps(Mix.env)]
   end
 
   # Configuration for the OTP application
@@ -26,14 +26,25 @@ defmodule Zencoder.Mixfile do
   #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1"}
   #
   # Type `mix help deps` for more examples and options
-  defp deps do
+  def deps(:dev) do
+    deps(:prod)
+  end
+
+  def deps(:test) do
+    deps(:prod) ++
     [
-      {:httpotion, "~> 0.2.4"},
-      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:jazz, "~> 0.1.2"},
       {:exvcr, "~> 0.1.7"},
       {:excoveralls, "~> 0.2.4"},
       {:meck, "0.8.2", github: "eproxus/meck"}
     ]
   end
+
+  def deps(:prod) do
+    [
+      {:httpotion, "~> 0.2.4"},
+      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
+      {:jazz, "~> 0.1.2"},
+    ]
+  end
+
 end
