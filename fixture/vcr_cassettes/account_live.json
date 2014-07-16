@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Zencoder-Api-Key": "api-key"
+      },
+      "method": "put",
+      "options": [],
+      "url": "https://qa.zencoder.com/api/v2/account/live"
+    },
+    "response": {
+      "body": " ",
+      "headers": {
+        "Server": "ZenServer 0.1.9",
+        "Date": "Wed, 16 Jul 2014 03:26:58 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Zencoder-Rate-Remaining": "60",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Headers": "Zencoder-Api-Key",
+        "Access-Control-Max-Age": "300",
+        "Cache-Control": "private, max-age=0, must-revalidate"
+      },
+      "status_code": 204,
+      "type": "ok"
+    }
+  }
+]

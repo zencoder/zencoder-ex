@@ -1,0 +1,37 @@
+[
+  {
+    "request": {
+      "body": "{\"email\":\"zencoder@example.com\",\"terms_of_service\":1}",
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Zencoder-Api-Key": "nil"
+      },
+      "method": "post",
+      "options": [],
+      "url": "https://app.zencoder.com/api/v2/account"
+    },
+    "response": {
+      "body": "{\"api_key\":\"new-api-key\",\"password\":\"random-password\"}",
+      "headers": {
+        "Server": "ZenServer 0.1.9",
+        "Date": "Wed, 16 Jul 2014 15:18:58 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "73",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Zencoder-Rate-Remaining": "1000",
+        "ETag": "\"24bced071de6278d4a78cf9dd8a36c97\"",
+        "Set-Cookie": "user_credentials=somecookie; path=/; secure",
+        "Set-Cookie": "_zencoder3_session_0=somesession; path=/; secure; HttpOnly",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Headers": "Zencoder-Api-Key",
+        "Access-Control-Max-Age": "300",
+        "Cache-Control": "private, max-age=0, must-revalidate"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
