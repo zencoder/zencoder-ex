@@ -113,7 +113,35 @@ You can pattern match to determine how to handle the response:
 Create a [new job](https://app.zencoder.com/docs/api/jobs/create).
 
   ````elixir
+  # Basic job
   Zencoder.Job.create(%{input: "http://s3.amazonaws.com/zencodertesting/test.mov"})
+
+  # More extensive job, see https://app.zencoder.com/docs/api/encoding for more encoding settings
+  Zencoder.Job.create(%{
+    input: "s3://zencodertesting/test.mov",
+    outputs: [
+      %{
+        label: "mp4 high",
+        url: "s3://your-bucket/output-file-name.mp4",
+        h264_profile: "high"
+      },
+      %{
+        url: "s3://your-bucket/output-file-name.webm",
+        label: "webm",
+        format: "webm"
+      },
+      %{
+        url: "s3://your-bucket/output-file-name.ogg",
+        label: "ogg",
+        format: "ogg"
+      },
+      %{
+        url: "s3://your-bucket/output-file-name-mobile.mp4",
+        label: "mp4 low",
+        size: "640x480"
+      }
+    ]
+  })
   ````
 
 Get [details](https://app.zencoder.com/docs/api/jobs/show) about a job.
