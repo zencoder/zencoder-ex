@@ -11,11 +11,14 @@ Requires Elixir ~> 0.14.3
 
 Install the [Hex.pm](http://hex.pm) package
 
-1. Add zencoder `mix.exs` dependencies:
+1. Add zencoder and ibrowse to your `mix.exs` dependencies:
 
     ```elixir
     def deps do
-      [{:zencoder, "~> 0.0.1"}]
+      [
+        {:zencoder, "~> 0.1.1"},
+        {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
+      ]
     end
     ```
 
