@@ -24,7 +24,8 @@ defmodule Zencoder.Resource do
     [
       {"Accept", "application/json"},
       {"Content-Type", "application/json"},
-      {"Zencoder-Api-Key", options[:api_key] || Zencoder.api_key}
+      {"Zencoder-Api-Key", options[:api_key] || Zencoder.api_key},
+      {"User-Agent", "Zencoder-Elixir v#{Zencoder.Mixfile.project[:version]}"}
     ]
   end
 
