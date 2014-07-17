@@ -34,7 +34,7 @@ Install the [Hex.pm](http://hex.pm) package
 
 To communicate with the Zencoder API you'll need to provide your API key, you can find your API key by logging into your Zencoder account and visiting https://app.zencoder.com/api
 
-There are three ways to provide your API key to the Elixir library.
+There are three ways to provide your API key to the Elixir library:
 
 1. Set it from within your application
     ```elixir
@@ -53,7 +53,7 @@ There are three ways to provide your API key to the Elixir library.
 
 #### Base URL
 
-By default the integration library will send all requests to version 2 of our API: "https://app.zencoder.com/api/v2". If, for whatever reason, you want to send requests to a different url you may configure your base URL in two ways.
+By default the integration library will send all requests to version 2 of our API: "https://app.zencoder.com/api/v2". If, for whatever reason, you want to send requests to a different url you may configure your base URL in two ways:
 
 1. Set it from within your application
     ```elixir
@@ -63,6 +63,25 @@ By default the integration library will send all requests to version 2 of our AP
 2. Set it as the environment variable `ZENCODER_BASE_URL`
     ```
     ZENCODER_BASE_URL=https://app.zencoder.com/api/v1 iex -S mix
+    ```
+
+#### Timeout
+
+We recommend wrapping your requests to Zencoder in a 30 second timeout. Zencoder usually responds in less than a second, so 30 seconds should give it plenty of time to respond. If the timeout is exceeded your request will return a %Zencoder.Error{} struct. If you wish to customize the length of the timeout you can do so by setting the timeout (in milliseconds) in three ways:
+
+1. Setting it from within your application
+    ```elixir
+    Zencoder.timeout 60000
+    ```
+
+2. Set it as the environment variable `ZENCODER_TIMEOUT`
+    ```
+    ZENCODER_TIMEOUT=60000 iex -S mix
+    ```
+
+3. Every request takes a map as its final argument, you may provide your custom timeout there
+    ```elixir
+    Zencoder.Job.progress(12345, %{timeout: 60000})
     ```
 
 ## Responses

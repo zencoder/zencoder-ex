@@ -3,20 +3,25 @@ defmodule ZencoderTest do
 
   setup context do
 
+    if env_api_key = context[:env_api_key] do
+      System.put_env("ZENCODER_API_KEY", env_api_key)
+    end
+
     if env_url = context[:env_url] do
       System.put_env("ZENCODER_BASE_URL", env_url)
     end
 
-    if env_api_key = context[:env_api_key] do
-      System.put_env("ZENCODER_API_KEY", env_api_key)
+    if env_timeout = context[:env_timeout] do
+      System.put_env("ZENCODER_TIMEOUT", env_timeout)
     end
 
     on_exit fn ->
       Zencoder.api_key(nil)
       Zencoder.base_url(nil)
       Zencoder.timeout(nil)
-      System.delete_env("ZENCODER_BASE_URL")
       System.delete_env("ZENCODER_API_KEY")
+      System.delete_env("ZENCODER_BASE_URL")
+      System.delete_env("ZENCODER_TIMEOUT")
     end
 
     :ok
@@ -50,6 +55,11 @@ defmodule ZencoderTest do
 
   test "gets default timeout" do
     assert 30000 == Zencoder.timeout
+  end
+
+  @tag env_timeout: "60000"
+  test "gets timeout from environment" do
+    assert 60000 == Zencoder.timeout
   end
 
   test "sets timeout" do

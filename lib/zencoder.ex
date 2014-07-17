@@ -23,11 +23,13 @@ defmodule Zencoder do
   end
 
   def timeout do
-    Config.timeout || 30000
+    Config.timeout || env_timeout(System.get_env("ZENCODER_TIMEOUT")) || 30000
   end
 
   def timeout(time_in_ms) do
     Config.timeout(time_in_ms)
   end
 
+  defp env_timeout(timeout) when is_binary(timeout), do: String.to_integer(timeout)
+  defp env_timeout(timeout), do: timeout
 end
