@@ -16,7 +16,7 @@ Install the [Hex.pm](http://hex.pm) package
     ```elixir
     def deps do
       [
-        {:zencoder, "~> 0.1.1"},
+        {:zencoder, "~> 0.1.2"},
         {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
       ]
     end
