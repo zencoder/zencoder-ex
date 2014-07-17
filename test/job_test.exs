@@ -11,7 +11,8 @@ defmodule JobTest do
     use_cassette "job_create" do
       assert 1234 == Zencoder.Job.create(%{
                        test: true,
-                       input: "http://s3.amazonaws.com/zencodertesting/test.mov"
+                       input: "http://s3.amazonaws.com/zencodertesting/test.mov",
+                       timeout: 60000
                      }).body[:id]
     end
   end
