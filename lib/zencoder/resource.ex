@@ -47,7 +47,7 @@ defmodule Zencoder.Resource do
   def params(""),     do: ""
   def params(params), do: "?#{params}"
 
-  def timeout(%{timeout: timeout} = options), do: timeout
-  def timeout(_options), do: 30000
+  def timeout(%{timeout: timeout} = _options), do: timeout
+  def timeout(_options), do: Zencoder.timeout
 
 end

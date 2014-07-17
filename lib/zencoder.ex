@@ -6,6 +6,14 @@ defmodule Zencoder do
     Zencoder.Supervisor.start_link
   end
 
+  def api_key do
+    Config.api_key || System.get_env("ZENCODER_API_KEY")
+  end
+
+  def api_key(key) do
+    Config.api_key(key)
+  end
+
   def base_url do
     Config.base_url || System.get_env("ZENCODER_BASE_URL") || "https://app.zencoder.com/api/v2"
   end
@@ -14,12 +22,12 @@ defmodule Zencoder do
     Config.base_url(url)
   end
 
-  def api_key do
-    Config.api_key || System.get_env("ZENCODER_API_KEY")
+  def timeout do
+    Config.timeout || 30000
   end
 
-  def api_key(key) do
-    Config.api_key(key)
+  def timeout(time_in_ms) do
+    Config.timeout(time_in_ms)
   end
 
 end

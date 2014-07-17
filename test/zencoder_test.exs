@@ -12,8 +12,9 @@ defmodule ZencoderTest do
     end
 
     on_exit fn ->
-      Zencoder.base_url(nil)
       Zencoder.api_key(nil)
+      Zencoder.base_url(nil)
+      Zencoder.timeout(nil)
       System.delete_env("ZENCODER_BASE_URL")
       System.delete_env("ZENCODER_API_KEY")
     end
@@ -45,6 +46,16 @@ defmodule ZencoderTest do
     assert nil == Zencoder.api_key
     Zencoder.api_key "api-key"
     assert "api-key" == Zencoder.api_key
+  end
+
+  test "gets default timeout" do
+    assert 30000 == Zencoder.timeout
+  end
+
+  test "sets timeout" do
+    assert 30000 == Zencoder.timeout
+    Zencoder.timeout 60000
+    assert 60000 == Zencoder.timeout
   end
 
 end
