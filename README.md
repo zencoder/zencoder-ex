@@ -67,7 +67,7 @@ By default the integration library will send all requests to version 2 of our AP
 
 #### Timeout
 
-We recommend wrapping your requests to Zencoder in a 30 second timeout. Zencoder usually responds in less than a second, so 30 seconds should give it plenty of time to respond. If the timeout is exceeded your request will return a %Zencoder.Error{} struct. If you wish to customize the length of the timeout you can do so by setting the timeout (in milliseconds) in three ways:
+We recommend wrapping your requests to Zencoder in a 30 second timeout. Zencoder usually responds in less than a second, so 30 seconds should give it plenty of time to respond. If the timeout is exceeded your request will return a `%Zencoder.Error{}` struct. If you wish to customize the length of the timeout you can do so by setting the timeout (in milliseconds) in three ways:
 
 1. Setting it from within your application
     ```elixir
