@@ -4,19 +4,19 @@ defmodule Zencoder.Resource do
 
   def get(url, options) do
     Response.process fn ->
-      HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options))
+      HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options), [{:timeout, timeout(options)}])
     end
   end
 
   def post(url, options) do
     Response.process fn ->
-      HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options))
+      HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options), [{:timeout, timeout(options)}])
     end
   end
 
   def put(url, options) do
     Response.process fn ->
-      HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options))
+      HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options), [{:timeout, timeout(options)}])
     end
   end
 
@@ -30,20 +30,24 @@ defmodule Zencoder.Resource do
   end
 
   def body(%{} = options) when map_size(options) == 0, do: ""
-  def body(%{api_key: _} = options) do
+  def body(%{} = options) do
     options
     |> Map.delete(:api_key)
-    |> body
+    |> Map.delete(:timeout)
+    |> JSON.encode!
   end
-  def body(options), do: JSON.encode!(options)
 
   def params(%{} = options) do
     options
     |> Map.delete(:api_key)
+    |> Map.delete(:timeout)
     |> URI.encode_query
     |> params
   end
   def params(""),     do: ""
   def params(params), do: "?#{params}"
+
+  def timeout(%{timeout: timeout} = options), do: timeout
+  def timeout(_options), do: 30000
 
 end
