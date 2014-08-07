@@ -4,7 +4,7 @@ defmodule Zencoder.Mixfile do
   def project do
     [
       app: :zencoder,
-      version: "0.1.2",
+      version: "0.1.3",
       elixir: "~> 0.15.0",
       test_coverage: [tool: ExCoveralls],
       deps: deps(Mix.env),
