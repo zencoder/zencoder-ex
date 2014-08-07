@@ -5,7 +5,7 @@
 
 An Elixir library for interacting with the [Zencoder](http://zencoder.com) API.
 
-Requires Elixir ~> 0.14.3
+Requires Elixir ~> 0.15.0
 
 ## Installation
 
@@ -16,7 +16,7 @@ Install the [Hex.pm](http://hex.pm) package
     ```elixir
     def deps do
       [
-        {:zencoder, "~> 0.1.2"},
+        {:zencoder, "~> 0.1.3"},
         {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
       ]
     end
