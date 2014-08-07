@@ -5,7 +5,7 @@ defmodule Zencoder.Mixfile do
     [
       app: :zencoder,
       version: "0.1.2",
-      elixir: "~> 0.14.3",
+      elixir: "~> 0.15.0",
       test_coverage: [tool: ExCoveralls],
       deps: deps(Mix.env),
       package: [
@@ -41,8 +41,8 @@ defmodule Zencoder.Mixfile do
   def deps(:test) do
     deps(:prod) ++
     [
-      {:exvcr, "~> 0.1.7"},
-      {:excoveralls, "~> 0.2.4"},
+      {:exvcr, "~> 0.3.0"},
+      {:excoveralls, "~> 0.3.2"},
       {:meck, "0.8.2", github: "eproxus/meck"}
     ]
   end
@@ -51,7 +51,7 @@ defmodule Zencoder.Mixfile do
     [
       {:httpotion, "~> 0.2.4"},
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:jazz, "~> 0.1.2"},
+      {:jazz, "~> 0.2.0"},
     ]
   end
 
