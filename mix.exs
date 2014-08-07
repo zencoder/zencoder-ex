@@ -11,7 +11,7 @@ defmodule Zencoder.Mixfile do
       package: [
         contributors: ["Adam Kittelson"],
         licenses: ["MIT"],
-        links: [github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com"]
+        links: %{ github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com" }
       ],
       description: "Elixir API wrapper for the Zencoder video transcoding API."
     ]
