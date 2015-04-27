@@ -4,14 +4,15 @@ defmodule Zencoder.Mixfile do
   def project do
     [
       app: :zencoder,
-      version: "0.1.3",
+      version: "1.0.0",
       elixir: "~> 1.0.0",
       test_coverage: [tool: ExCoveralls],
       deps: deps,
       package: [
         contributors: ["Adam Kittelson"],
         licenses: ["MIT"],
-        links: %{ github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com" }
+        links: %{ github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com" },
+        files: ["lib/*", "mix.exs", "README.md", "LICENSE"]
       ],
       description: "Elixir API wrapper for the Zencoder video transcoding API."
     ]
