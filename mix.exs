@@ -5,9 +5,9 @@ defmodule Zencoder.Mixfile do
     [
       app: :zencoder,
       version: "0.1.3",
-      elixir: "~> 0.15.0",
+      elixir: "~> 1.0.0",
       test_coverage: [tool: ExCoveralls],
-      deps: deps(Mix.env),
+      deps: deps,
       package: [
         contributors: ["Adam Kittelson"],
         licenses: ["MIT"],
@@ -34,24 +34,14 @@ defmodule Zencoder.Mixfile do
   #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1"}
   #
   # Type `mix help deps` for more examples and options
-  def deps(:dev) do
-    deps(:prod)
-  end
-
-  def deps(:test) do
-    deps(:prod) ++
+  def deps do
     [
-      {:exvcr, "~> 0.3.0"},
-      {:excoveralls, "~> 0.3.2"},
-      {:meck, "0.8.2", github: "eproxus/meck"}
-    ]
-  end
-
-  def deps(:prod) do
-    [
-      {:httpotion, "~> 0.2.4"},
+      {:httpotion, "~> 1.0.0"},
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:jazz, "~> 0.2.0"},
+      {:poison, "~> 1.4.0"},
+      {:exvcr, "~> 0.4.0",       only: [:dev, :test]},
+      {:excoveralls, "~> 0.3.2", only: [:dev, :test]},
+      {:meck, "~> 0.8.2",        only: [:dev, :test]}
     ]
   end
 

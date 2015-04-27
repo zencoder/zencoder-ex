@@ -1,6 +1,5 @@
 defmodule Zencoder.Resource do
   alias Zencoder.Response
-  use Jazz
 
   def get(url, options) do
     Response.process fn ->
@@ -34,7 +33,7 @@ defmodule Zencoder.Resource do
     options
     |> Map.delete(:api_key)
     |> Map.delete(:timeout)
-    |> JSON.encode!
+    |> Poison.encode!
   end
 
   def params(%{} = options) do
