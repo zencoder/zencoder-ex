@@ -11,6 +11,7 @@ notifications:
       - a@zencoder.com
 before_script:
   - export PATH=`pwd`/elixir/bin:$PATH
+  - mix local.rebar
   - mix local.hex --force
   - MIX_ENV=test mix do deps.get, compile
 script:
