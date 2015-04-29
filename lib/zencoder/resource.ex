@@ -20,11 +20,13 @@ defmodule Zencoder.Resource do
   end
 
   def headers(options) do
+    {:ok, version} = :application.get_key(:zencoder, :vsn)
+
     [
       {"Accept", "application/json"},
       {"Content-Type", "application/json"},
       {"Zencoder-Api-Key", options[:api_key] || Zencoder.api_key},
-      {"User-Agent", "Zencoder-Elixir v#{Zencoder.Mixfile.project[:version]}"}
+      {"User-Agent", "Zencoder-Elixir v#{version}"}
     ]
   end
 
