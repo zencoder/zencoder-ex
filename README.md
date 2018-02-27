@@ -127,9 +127,9 @@ You can pattern match to determine how to handle the response:
   end
   ```
 
-## [Jobs](https://app.zencoder.com/docs/api/jobs)
+## [Jobs](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs)
 
-Create a [new job](https://app.zencoder.com/docs/api/jobs/create).
+Create a [new job](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs-Create_a_Job).
 
   ````elixir
   # Basic job
@@ -163,70 +163,70 @@ Create a [new job](https://app.zencoder.com/docs/api/jobs/create).
   })
   ````
 
-Get [details](https://app.zencoder.com/docs/api/jobs/show) about a job.
+Get [details](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs-Get_Job_Details) about a job.
 
   ````elixir
   Zencoder.Job.details(12345)
   ````
 
-Get [progress](https://app.zencoder.com/docs/api/jobs/progress) on a job.
+Get [progress](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs-Job_Progress) on a job.
 
   ````elixir
   Zencoder.Job.progress(12345)
   ````
 
-[List jobs](https://app.zencoder.com/docs/api/jobs/list). By default this returns the last 50 jobs, but this can be altered in an optional Map.
+[List jobs](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs-List_Jobs). By default this returns the last 50 jobs, but this can be altered in an optional Map.
 
   ````elixir
   Zencoder.Job.list(%{page: 1, per_page: 5, state: "finished"})
   ````
 
 
-[Cancel](https://app.zencoder.com/docs/api/jobs/cancel) a job
+[Cancel](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs-Cancel_a_Job) a job
 
   ````elixir
   Zencoder.Job.cancel(12345)
   ````
 
-[Resubmit](https://app.zencoder.com/docs/api/jobs/resubmit) a job
+[Resubmit](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Jobs-Resubmit_a_Job) a job
 
   ````elixir
   Zencoder.Job.resubmit(12345)
   ````
 
-## [Inputs](https://app.zencoder.com/docs/api/inputs)
+## [Inputs](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Inputs)
 
-Get [details](https://app.zencoder.com/docs/api/inputs/show) about an input.
+Get [details](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Inputs-Get_Input_Details) about an input.
 
   ````elixir
   Zencoder.Input.details(12345)
   ````
 
-Get [progress](https://app.zencoder.com/docs/api/inputs/progress) for an input.
+Get [progress](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Inputs-Update_Input_Progress) for an input.
 
   ````elixir
   Zencoder.Input.progress(12345)
   ````
 
-## [Outputs](https://app.zencoder.com/docs/api/outputs)
+## [Outputs](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Outputs)
 
-Get [details](https://app.zencoder.com/docs/api/outputs/show) about an output.
+Get [details](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Outputs-Get_Output_Details) about an output.
 
   ````elixir
   Zencoder.Output.details(12345)
   ````
 
-Get [progress](https://app.zencoder.com/docs/api/outputs/progress) for an output.
+Get [progress](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Outputs-Update_Output_Progress) for an output.
 
   ````elixir
   Zencoder.Output.progress(12345)
   ````
 
-## [Reports](https://app.zencoder.com/docs/api/reports)
+## [Reports](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Reports)
 
 Reports are great for getting usage data for your account. All default to 30 days from yesterday with no [grouping](https://app.zencoder.com/docs/api/encoding/job/grouping), but this can be altered in the optional Map. These will return `422 Unprocessable Entity` if the date format is incorrect or the range is greater than 2 months. Correct date format is `YYYY-MM-DD`.
 
-Get [all usage](https://app.zencoder.com/docs/api/reports/all) (Live + VOD).
+Get [all usage](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Reports-Get_Usage_for_VOD___Live) (Live + VOD).
 
   ````elixir
   Zencoder.Report.all
@@ -238,7 +238,7 @@ Get [all usage](https://app.zencoder.com/docs/api/reports/all) (Live + VOD).
   Zencoder.Report.all %{grouping: "aperture-testing"}
   ````
 
-Get [VOD usage](https://app.zencoder.com/docs/api/reports/vod).
+Get [VOD usage](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Reports-Get_Usage_for_VOD).
 
   ````elixir
   Zencoder.Report.vod
@@ -250,7 +250,7 @@ Get [VOD usage](https://app.zencoder.com/docs/api/reports/vod).
   Zencoder.Report.vod %{grouping: "aperture-testing"}
   ````
 
-Get [Live usage](https://app.zencoder.com/docs/api/reports/live).
+Get [Live usage](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Reports-Get_Usage_for_Live).
 
   ````elixir
   Zencoder.Report.live
@@ -262,9 +262,9 @@ Get [Live usage](https://app.zencoder.com/docs/api/reports/live).
   Zencoder.Report.live %{grouping: "aperture-testing"}
   ````
 
-## [Accounts](https://app.zencoder.com/docs/api/accounts)
+## [Accounts](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Accounts)
 
-Create a [new account](https://app.zencoder.com/docs/api/accounts/create). A unique email address and terms of service are required, but you can also specify a password (and confirmation) along with whether or not you want to subscribe to the Zencoder newsletter. New accounts will be created under the Test (Free) plan.
+Create a [new account](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Accounts-Create_an_Account). A unique email address and terms of service are required, but you can also specify a password (and confirmation) along with whether or not you want to subscribe to the Zencoder newsletter. New accounts will be created under the Test (Free) plan.
 
   ````elixir
   Zencoder.Account.create %{email: "tedjones@example.com", terms_of_service: 1}
@@ -279,13 +279,13 @@ Create a [new account](https://app.zencoder.com/docs/api/accounts/create). A uni
   }
   ````
 
-Get [details](https://app.zencoder.com/docs/api/accounts/show) about the current account.
+Get [details](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Accounts-Get_Account_Details) about the current account.
 
   ````elixir
   Zencoder.Account.details
   ````
 
-Turn [integration mode](https://app.zencoder.com/docs/api/accounts/integration) on (all jobs are test jobs).
+Turn [integration mode](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Accounts-Turn_On_Integration_Mode) on (all jobs are test jobs).
 
   ````elixir
   Zencoder.Account.integration
