@@ -119,11 +119,11 @@ You can pattern match to determine how to handle the response:
       # some happy path stuff here
     %Zencoder.Response{success?: false} = response ->
       # uh oh, maybe something is wrong with your request?
-      # better check the docs at https://app.zencoder.com/docs
+      # better check the docs at https://support.brightcove.com/zencoder
     %Zencoder.Error{} = response ->
       # timed out? Zencoder broken? Computers are hard! Perhaps some nice retry logic.
       # Check out our integration reliability guide:
-      # https://app.zencoder.com/docs/guides/advanced-integration/stable-integration
+      # https://support.brightcove.com/zencoder-100-integration-reliability
   end
   ```
 
@@ -135,7 +135,7 @@ Create a [new job](https://brightcovelearning.github.io/Brightcove-API-Reference
   # Basic job
   Zencoder.Job.create(%{input: "http://s3.amazonaws.com/zencodertesting/test.mov"})
 
-  # More extensive job, see https://app.zencoder.com/docs/api/encoding for more encoding settings
+  # More extensive job, see https://support.brightcove.com/zencoder-encoding-settings for more encoding settings
   Zencoder.Job.create(%{
     input: "s3://zencodertesting/test.mov",
     outputs: [
@@ -224,7 +224,7 @@ Get [progress](https://brightcovelearning.github.io/Brightcove-API-References/ze
 
 ## [Reports](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Reports)
 
-Reports are great for getting usage data for your account. All default to 30 days from yesterday with no [grouping](https://app.zencoder.com/docs/api/encoding/job/grouping), but this can be altered in the optional Map. These will return `422 Unprocessable Entity` if the date format is incorrect or the range is greater than 2 months. Correct date format is `YYYY-MM-DD`.
+Reports are great for getting usage data for your account. All default to 30 days from yesterday with no [grouping](https://support.brightcove.com/zencoder-encoding-settings-job#grouping), but this can be altered in the optional Map. These will return `422 Unprocessable Entity` if the date format is incorrect or the range is greater than 2 months. Correct date format is `YYYY-MM-DD`.
 
 Get [all usage](https://brightcovelearning.github.io/Brightcove-API-References/zencoder-api/v2/doc/index.html#api-Reports-Get_Usage_for_VOD___Live) (Live + VOD).
 
