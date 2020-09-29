@@ -4,12 +4,12 @@ defmodule Zencoder.Mixfile do
   def project do
     [
       app: :zencoder,
-      version: "1.0.1",
+      version: "1.2.0",
       elixir: "~> 1.0",
       test_coverage: [tool: ExCoveralls],
       deps: deps(),
       package: [
-        contributors: ["Adam Kittelson"],
+        contributors: ["Adam Kittelson", "Chris Warren", "Paul Nicholon"],
         licenses: ["MIT"],
         links: %{ github: "https://github.com/zencoder/zencoder-ex", zencoder: "https://zencoder.com" },
         files: ["lib/*", "mix.exs", "README.md", "LICENSE"]
