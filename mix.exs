@@ -5,9 +5,9 @@ defmodule Zencoder.Mixfile do
     [
       app: :zencoder,
       version: "1.0.1",
-      elixir: "~> 1.0.0",
+      elixir: "~> 1.0",
       test_coverage: [tool: ExCoveralls],
-      deps: deps,
+      deps: deps(),
       package: [
         contributors: ["Adam Kittelson"],
         licenses: ["MIT"],
@@ -37,12 +37,11 @@ defmodule Zencoder.Mixfile do
   # Type `mix help deps` for more examples and options
   def deps do
     [
-      {:httpotion, "~> 1.0.0"},
-      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:poison, "~> 1.4.0"},
-      {:exvcr, "~> 0.4.0",       only: [:dev, :test]},
-      {:excoveralls, "~> 0.3.2", only: [:dev, :test]},
-      {:meck, "~> 0.8.2",        only: [:dev, :test]}
+      {:httpotion, "~> 3.1.3"},
+      {:jason, "~> 1.2"},
+      {:exvcr, "~> 0.11.2",       only: [:dev, :test]},
+      {:excoveralls, "~> 0.13.2", only: [:dev, :test]},
+      {:meck, "~> 0.9.0",        only: [:dev, :test]}
     ]
   end
 

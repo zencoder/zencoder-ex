@@ -3,19 +3,19 @@ defmodule Zencoder.Resource do
 
   def get(url, options) do
     Response.process fn ->
-      HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", headers(options), [{:timeout, timeout(options)}])
+      HTTPotion.get("#{Zencoder.base_url}#{url}#{params(options)}", [headers: headers(options), timeout: timeout(options)])
     end
   end
 
   def post(url, options) do
     Response.process fn ->
-      HTTPotion.post("#{Zencoder.base_url}#{url}", body(options), headers(options), [{:timeout, timeout(options)}])
+      HTTPotion.post("#{Zencoder.base_url}#{url}", [headers: headers(options), body: body(options), timeout: timeout(options)])
     end
   end
 
   def put(url, options) do
     Response.process fn ->
-      HTTPotion.put("#{Zencoder.base_url}#{url}", body(options), headers(options), [{:timeout, timeout(options)}])
+      HTTPotion.put("#{Zencoder.base_url}#{url}", [headers: headers(options), body: body(options), timeout: timeout(options)])
     end
   end
 
@@ -35,7 +35,7 @@ defmodule Zencoder.Resource do
     options
     |> Map.delete(:api_key)
     |> Map.delete(:timeout)
-    |> Poison.encode!
+    |> Jason.encode!
   end
 
   def params(%{} = options) do
