@@ -12,7 +12,7 @@ defmodule Zencoder.Response do
 
   def process_response(response) do
     body = response.body
-           |> String.strip
+           |> String.trim
            |> process_body
 
     %__MODULE__ {
@@ -26,7 +26,7 @@ defmodule Zencoder.Response do
   end
 
   def process_body(raw_body) when byte_size(raw_body) == 0, do: %{}
-  def process_body(raw_body), do: Poison.decode!(raw_body, keys: :atoms)
+  def process_body(raw_body), do: Jason.decode!(raw_body, keys: :atoms)
 
   def process_errors(nil), do: []
   def process_errors(errors), do: errors
