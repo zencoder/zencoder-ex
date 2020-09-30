@@ -5,9 +5,9 @@ defmodule Zencoder.Mixfile do
     [
       app: :zencoder,
       version: "1.0.1",
-      elixir: "~> 1.0.0",
+      elixir: "~> 1.0",
       test_coverage: [tool: ExCoveralls],
-      deps: deps,
+      deps: deps(),
       package: [
         contributors: ["Adam Kittelson"],
         licenses: ["MIT"],
