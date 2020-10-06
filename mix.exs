@@ -41,7 +41,8 @@ defmodule Zencoder.Mixfile do
       {:jason, "~> 1.2"},
       {:exvcr, "~> 0.11.2",       only: [:dev, :test]},
       {:excoveralls, "~> 0.13.2", only: [:dev, :test]},
-      {:meck, "~> 0.9.0",        only: [:dev, :test]}
+      {:meck, "~> 0.9.0",        only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
